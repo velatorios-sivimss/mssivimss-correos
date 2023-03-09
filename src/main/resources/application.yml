@@ -1,0 +1,11 @@
+
+correos:
+  user: 'eduardo.flores@people-media.com.mx'
+  password: 'eduardo0512'
+  true: 'true'
+  protocolo: 'TLSv1.2'
+  host: 'smtp.gmail.com'
+  port: '587'
+
+jwt:
+  secretkey-dominios: funcionamuybiendominio
