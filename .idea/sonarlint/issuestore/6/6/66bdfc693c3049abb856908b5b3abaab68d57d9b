@@ -1,13 +1,0 @@
-
-c	java:S116"ORename this field "USER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º¹ã-
-d	java:S116"ORename this field "PASS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÃªú
-@
-java:S11812"%Catch Exception instead of Throwable.(‡˜ÚÚøÿÿÿÿ
-U
-java:S1161@":Add the "@Override" annotation above this method signature(»øòÒûÿÿÿÿ
-@
-java:S1181T"%Catch Exception instead of Throwable.(‡˜ÚÚøÿÿÿÿ
-U
-java:S1161a":Add the "@Override" annotation above this method signature(»øòÒûÿÿÿÿ
-W
-java:S1075s"ARefactor your code to get this URI from a customizable parameter.(öÕ´¤

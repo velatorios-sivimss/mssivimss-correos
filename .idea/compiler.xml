@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="imss" />
         <module name="ms-correos-sivimss" />
+        <module name="mssivimss-correos" />
       </profile>
     </annotationProcessing>
   </component>
@@ -15,6 +16,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="imss" options="-parameters" />
       <module name="ms-correos-sivimss" options="-parameters" />
+      <module name="mssivimss-correos" options="-parameters" />
     </option>
   </component>
 </project>
