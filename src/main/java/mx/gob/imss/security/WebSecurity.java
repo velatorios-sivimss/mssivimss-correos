@@ -39,11 +39,13 @@ public class WebSecurity {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		// paths publicos
 
-		http.csrf().disable().authorizeRequests().anyRequest().authenticated().and().exceptionHandling()
-				.authenticationEntryPoint(authenticationEntryPoint());
+		http.csrf().disable();
+				//.authorizeRequests().anyRequest();
+				//authenticated().and().exceptionHandling()
+				//.authenticationEntryPoint(authenticationEntryPoint());
 		// ==añadir filtro a la configuracion de spring security
-		http.addFilterBefore(jwtAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class).sessionManagement()
-				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//		http.addFilterBefore(jwtAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class).sessionManagement()
+//				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
 		return http.build();
 	}

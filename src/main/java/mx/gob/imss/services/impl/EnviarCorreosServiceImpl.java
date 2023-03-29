@@ -45,7 +45,7 @@ public class EnviarCorreosServiceImpl implements EnviarCorreosService {
         try {
             ArrayList<Usuarios> listUsrs = request.getUsuarios();
             for(Usuarios usrsData: listUsrs ){
-                enviarPlantilla(usrsData.getNombre(),usrsData.getEmail());
+                enviarPlantilla(usrsData.getNombre(),usrsData.getEmail(), usrsData.getCodigo());
             }
         }catch (Throwable e){
             log.error("No pude mandar el correo :c");
@@ -53,7 +53,7 @@ public class EnviarCorreosServiceImpl implements EnviarCorreosService {
         }
     }
 
-    public void enviarPlantilla(String nombre, String correo) throws MessagingException {
+    public void enviarPlantilla(String nombre, String correo, String codigo) throws MessagingException {
         Properties props = new Properties();
         props.put("mail.smtp.auth", bandera);
         props.put("mail.smtp.starttls.enable", bandera);
@@ -70,7 +70,7 @@ public class EnviarCorreosServiceImpl implements EnviarCorreosService {
         message.addHeader("Content-type", "text/HTML; charset=UTF-8");
         message.setSubject("correo de prueba","UTF-8");
         message.addRecipients(Message.RecipientType.TO, new InternetAddress[]{new InternetAddress(correo)});
-        message.setContent(PlantillaMailUtil.plantilla(nombre)
+        message.setContent(PlantillaMailUtil.plantilla(nombre,codigo)
                 , "text/html");
         Transport.send(message);
     }
@@ -79,14 +79,14 @@ public class EnviarCorreosServiceImpl implements EnviarCorreosService {
         try {
             ArrayList<Usuarios> listUsrs = request.getUsuarios();
             for(Usuarios usrsData: listUsrs ){
-                enviarPlantillaYArchivo(usrsData.getNombre(),usrsData.getEmail());
+                enviarPlantillaYArchivo(usrsData.getNombre(),usrsData.getEmail(), usrsData.getCodigo());
             }
         }catch (Throwable e){
             log.error("No pude mandar el correo :c");
             e.printStackTrace();
         }
     }
-    public void enviarPlantillaYArchivo(String nombre, String correo) throws MessagingException {
+    public void enviarPlantillaYArchivo(String nombre, String correo, String codigo) throws MessagingException {
         Properties props = new Properties();
         props.put("mail.smtp.auth", bandera);
         props.put("mail.smtp.starttls.enable", bandera);
@@ -106,7 +106,7 @@ public class EnviarCorreosServiceImpl implements EnviarCorreosService {
         //envio de archivos
         BodyPart messageBody = new MimeBodyPart();
         MimeBodyPart plantilla  = new MimeBodyPart();
-        plantilla.setContent(PlantillaMailUtil.plantilla(nombre),"text/html; charset=utf-8");
+        plantilla.setContent(PlantillaMailUtil.plantilla(nombre,codigo),"text/html; charset=utf-8");
         messageBody.setText("");
         Multipart multipart = new MimeMultipart();
         multipart.addBodyPart(plantilla);

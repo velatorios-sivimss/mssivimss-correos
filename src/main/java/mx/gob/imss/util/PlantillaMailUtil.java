@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class PlantillaMailUtil {
 
-    public static String plantilla(String nombre){
+    public static String plantilla(String nombre, String codigo){
 String htmlPlantilla = "<!DOCTYPE html>" +
         "<html lang='en' xmlns='http://www.w3.org/1999/xhtml' xmlns:v='urn:schemas-microsoft-com:vml' xmlns:o='urn:schemas-microsoft-com:office:office'>" +
         "" +
@@ -127,7 +127,7 @@ String htmlPlantilla = "<!DOCTYPE html>" +
         "                                        <tr>" +
         "                                            <td align='left' style='font-size:0px;padding:10px 25px;word-break:break-word;'>" +
         "                                                <div style='font-family:Helvetica, Arial, sans-serif;font-size:18px;font-weight:400;line-height:24px;text-align:left;color:#434245;'>" +
-        "                                                    <p style='margin: 5px 0;'>Hola " + nombre + " Esta es una plantilla robada de internet pero usada para fines de pruebas :) </p>" +
+        "                                                    <p style='margin: 5px 0;'>Hola " + nombre + " este es tu codigo de recuperacion " + codigo + " :) </p>" +
         "                                                </div>" +
         "                                            </td>" +
         "                                        </tr>" +
