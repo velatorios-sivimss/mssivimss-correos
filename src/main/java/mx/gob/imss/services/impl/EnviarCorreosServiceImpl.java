@@ -1,7 +1,5 @@
 package mx.gob.imss.services.impl;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import lombok.extern.slf4j.Slf4j;
 import mx.gob.imss.model.Usuarios;
 import mx.gob.imss.model.requests.EnvioCorreosRequest;
@@ -19,7 +17,6 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Properties;
 @Slf4j
 @Service
