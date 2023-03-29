@@ -29,13 +29,13 @@ public class EnviarCorreosServiceImpl implements EnviarCorreosService {
     private String USER;
     @Value("${correos.password}")
     private String PASS;
-    @Value("${correos.true}")
+    @Value("${correos.bandera}")
     private String bandera;
     @Value ("${correos.protocolo}")
     private String protocolo;
     @Value("${correos.host}")
     private String host;
-    @Value("${correos.port")
+    @Value("${correos.port}")
     private String port;
 
 
