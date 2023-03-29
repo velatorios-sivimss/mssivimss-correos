@@ -40,6 +40,7 @@ public class WebSecurity {
 		// paths publicos
 
 		http.csrf().disable();
+		http.authorizeRequests().antMatchers("/**").permitAll();
 				//.authorizeRequests().anyRequest();
 				//authenticated().and().exceptionHandling()
 				//.authenticationEntryPoint(authenticationEntryPoint());
